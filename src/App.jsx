@@ -19,6 +19,7 @@ function App() {
     function handleSelect(selectedButton) {
         /*selectedButton => 'components', 'jsx', 'props', 'state*/
         setSelectedTopic(selectedButton);
+        // logs the old state
         console.log({selectedTopic});
     }
     console.log('APP COMPONENT RENDERING');
