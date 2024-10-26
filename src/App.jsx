@@ -15,7 +15,7 @@ function App() {
     * const [counter, setCounter] = useState(0);
     * const is recreated every time it is used
     * */
-    const [selectedTopic, setSelectedTopic] = useState('components');
+    const [selectedTopic, setSelectedTopic] = useState();
 
     function handleSelect(selectedButton) {
         /*selectedButton => 'components', 'jsx', 'props', 'state*/
@@ -23,6 +23,7 @@ function App() {
         // logs the old state
         console.log({selectedTopic});
     }
+
     console.log('APP COMPONENT RENDERING');
 
     return (
@@ -48,19 +49,22 @@ function App() {
                         <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
                         <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
                     </menu>
-                    <div id="tab-content">
-                        <h3>{EXAMPLES[selectedTopic].title}</h3>
-                        <p>{EXAMPLES[selectedTopic].description}</p>
-                        <pre>
-                            <code>
-                                {EXAMPLES[selectedTopic].code}
-                            </code>
-                        </pre>
-                    </div>
+
+                    {!selectedTopic ? <p>Please select a topic.</p> : null}
+                    {selectedTopic ? (
+                        <div id="tab-content">
+                            <h3>{EXAMPLES[selectedTopic].title}</h3>
+                            <p>{EXAMPLES[selectedTopic].description}</p>
+                            <pre>
+                                <code>{EXAMPLES[selectedTopic].code}</code>
+                            </pre>
+                        </div>
+                    ) : null}
                 </section>
             </main>
         </div>
-    );
+    )
+        ;
 }
 
 export default App;
