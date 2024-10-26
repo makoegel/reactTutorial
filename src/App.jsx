@@ -1,3 +1,5 @@
+//react Hook (start with use), are called inside of react functions or other hooks)
+import {useState} from 'react';
 //named Import with curly braces
 import {CORE_CONCEPTS} from "./data.js";
 import Header from "./components/Header/Header.jsx";
@@ -5,12 +7,19 @@ import CoreConcept from "./components/CoreConcept/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-    let tabContent = 'Please click a button';
+    /*call Hook-Functions always on the top level of the function
+    * counter:     current state,
+    * setCounter:  updating function
+    * (0):         initial value
+    * const [counter, setCounter] = useState(0);
+    * const is recreated every time it is used
+    * */
+    const [selectedTopic, setSelectedTopic]= useState('Please click a button');
 
     function handleSelect(selectedButton) {
         /*selectedButton => 'components', 'jsx', 'props', 'state*/
-        tabContent = selectedButton;
-        console.log(selectedButton);
+        setSelectedTopic(selectedButton);
+        console.log({selectedTopic});
     }
     console.log('APP COMPONENT RENDERING');
 
@@ -37,7 +46,7 @@ function App() {
                         <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
                         <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
                     </menu>
-                    {tabContent}
+                    {selectedTopic}
                 </section>
             </main>
         </div>
