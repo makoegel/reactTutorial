@@ -22,7 +22,10 @@ function App() {
                     <h2>Examples</h2>
                     <menu>
                         {/*Component-Composition*/}
-                        <TabButton label="Components"></TabButton>
+                        <TabButton>Components</TabButton>
+                        <TabButton>JSX</TabButton>
+                        <TabButton>Props</TabButton>
+                        <TabButton>State</TabButton>
                     </menu>
                 </section>
             </main>
