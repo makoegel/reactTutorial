@@ -4,30 +4,32 @@ import Button from "./Button.jsx";
 
 export default function ConditionalContent() {
 
-    const [selectedAction, setSelectedAction] = useState('delete');
+    const [isDeleting, setIsDeleting] = useState(false);
 
-    function handleSelect(selectedButton) {
-        setSelectedAction(selectedButton)
-        console.log(selectedButton);
+    function deleteHandler() {
+        setIsDeleting(true);
     }
 
-    let content = <Button onSelect={() => handleSelect('proceed')}>Delete</Button>
+    function proceedHander() {
+        setIsDeleting(false);
+    }
 
-    if (selectedAction === 'proceed') {
-        content = (
-            <div>
-                <div data-testid="alert" id="alert">
-                    <h2>Are you sure?</h2>
-                    <p>These changes can't be reverted!</p>
-                    <Button onSelect={() => handleSelect('delete')}>Proceed</Button>
-                </div>
+    let warning;
+
+    if (isDeleting) {
+        warning = (
+            <div data-testid="alert" id="alert">
+                <h2>Are you sure?</h2>
+                <p>These changes can't be reverted!</p>
+                <button onClick={proceedHander}>Proceed</button>
             </div>
-        )
+        );
     }
 
     return (
         <div>
-            {content}
+            {warning}
+            <button onClick={deleteHandler}>Delete</button>
         </div>
     );
 }
