@@ -7,6 +7,7 @@ import CoreConcept from "./components/CoreConcept/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 import {EXAMPLES} from "./data-with-examples.js";
 import ConditionalContent from "./components/TutorialExamples/ConditionalContent";
+import DynamicStyling from "./components/TutorialExamples/DynamicStyling";
 
 function App() {
     /*call Hook-Functions always on the top level of the function
@@ -80,6 +81,11 @@ function App() {
                 <section id={"conditionalContent"}>
                     <h2>Conditional Content</h2>
                     <ConditionalContent/>
+                </section>
+                <br />
+                <section id={"dynamic"}>
+                    <h2>Dynamic Styling</h2>
+                    <DynamicStyling />
                 </section>
             </main>
         </div>
