@@ -60,22 +60,26 @@ function App() {
                         {/*anonymous function is executed when button is clicked*/}
                         <TabButton
                             isSelected={selectedTopic === 'components'}
-                            onSelect={() => handleSelect('components')}>Components</TabButton>
+                            onSelect={() => handleSelect('components')}>Components
+                        </TabButton>
                         <TabButton
                             isSelected={selectedTopic === 'jsx'}
-                            onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+                            onSelect={() => handleSelect('jsx')}>JSX
+                        </TabButton>
                         <TabButton
                             isSelected={selectedTopic === 'props'}
-                            onSelect={() => handleSelect('props')}>Props</TabButton>
+                            onSelect={() => handleSelect('props')}>Props
+                        </TabButton>
                         <TabButton
                             isSelected={selectedTopic === 'state'}
-                            onSelect={() => handleSelect('state')}>State</TabButton>
+                            onSelect={() => handleSelect('state')}>State
+                        </TabButton>
                     </menu>
                     {tabContent}
                 </section>
                 <section id={"conditionalContent"}>
                     <h2>Conditional Content</h2>
-                    <ConditionalContent />
+                    <ConditionalContent/>
                 </section>
             </main>
         </div>
