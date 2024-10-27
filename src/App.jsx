@@ -1,4 +1,4 @@
-//react Hook (start with use), are called inside of react functions or other hooks)
+//react Hook (start with use, are called inside of react functions or other hooks)
 import {useState} from 'react';
 //named Import with curly braces
 import {CORE_CONCEPTS} from "./data.js";
@@ -6,6 +6,7 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 import {EXAMPLES} from "./data-with-examples.js";
+import ConditionalContent from "./components/TutorialExamples/ConditionalContent";
 
 function App() {
     /*call Hook-Functions always on the top level of the function
@@ -63,6 +64,10 @@ function App() {
                         <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
                     </menu>
                     {tabContent}
+                </section>
+                <section id={"conditionalContent"}>
+                    <h2>Conditional Content</h2>
+                    <ConditionalContent />
                 </section>
             </main>
         </div>
