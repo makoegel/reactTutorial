@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import './ConditionalContent.css';
-import Button from "./Button.jsx";
 
 export default function ConditionalContent() {
 
