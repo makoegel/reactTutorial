@@ -1,14 +1,11 @@
 //react Hook (start with use, are called inside of react functions or other hooks)
-import {useState} from 'react';
+import {useState, Fragment} from 'react';
 //named Import with curly braces
 import {CORE_CONCEPTS} from "./data.js";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 import {EXAMPLES} from "./data-with-examples.js";
-import ConditionalContent from "./components/TutorialExamples/ConditionalContent";
-import DynamicStyling from "./components/TutorialExamples/DynamicStyling";
-import DynamicListStyling from "./components/TutorialExamples/DynamicListStyling";
 
 function App() {
     /*call Hook-Functions always on the top level of the function
@@ -71,17 +68,6 @@ function App() {
                     </TabButton>
                 </menu>
                 {tabContent}
-            </section>
-            <section id={"conditionalContent"}>
-                <h2>Conditional Content</h2>
-                <ConditionalContent/>
-            </section>
-            <br/>
-            <section id={"dynamic"}>
-                <h2>Dynamic Styling</h2>
-                <DynamicStyling/>
-                <h2>Dynamic List Styling</h2>
-                <DynamicListStyling/>
             </section>
         </main>
     </div>);
