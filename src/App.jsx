@@ -36,7 +36,7 @@ function App() {
                 </pre>
     </div>)
 
-    return (<Fragment>
+    return (<>
         <Header/>
         <main>
             <section id="core-concepts">
@@ -70,7 +70,7 @@ function App() {
                 {tabContent}
             </section>
         </main>
-    </Fragment>);
+    </>);
 }
 
 export default App;
