@@ -30,25 +30,21 @@ function App() {
 
     let tabContent = <p>Please select a topic.</p>;
 
-    if (selectedTopic)
-        tabContent = (
-            <div id="tab-content">
-                <h3>{EXAMPLES[selectedTopic].title}</h3>
-                <p>{EXAMPLES[selectedTopic].description}</p>
-                <pre>
+    if (selectedTopic) tabContent = (<div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
                      <code>{EXAMPLES[selectedTopic].code}</code>
                 </pre>
-            </div>
-        )
+        </div>)
 
-    return (
-        <div>
+    return (<div>
             <Header/>
             <main>
                 <section id="core-concepts">
                     <h2>Core Concepts</h2>
                     <ul>
-                        {CORE_CONCEPTS.map((conceptItem) =>  <CoreConcept{...conceptItem} />)}
+                        {CORE_CONCEPTS.map((conceptItem) => <CoreConcept key={conceptItem.title} {...conceptItem} />)}
                     </ul>
                 </section>
                 <section id='examples'>
@@ -79,15 +75,13 @@ function App() {
                     <h2>Conditional Content</h2>
                     <ConditionalContent/>
                 </section>
-                <br />
+                <br/>
                 <section id={"dynamic"}>
                     <h2>Dynamic Styling</h2>
-                    <DynamicStyling />
+                    <DynamicStyling/>
                 </section>
             </main>
-        </div>
-    )
-        ;
+        </div>);
 }
 
 export default App;
